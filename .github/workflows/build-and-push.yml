@@ -46,6 +46,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/deepfactor-demo-app:latest
+          cache-from: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/deepfactor-demo-app:buildcache
+          cache-to: type=registry,ref=${{ secrets.DOCKER_HUB_USERNAME }}/deepfactor-demo-app:buildcache,mode=max
       
       
       
