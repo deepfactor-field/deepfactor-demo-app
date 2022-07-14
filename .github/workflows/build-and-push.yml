@@ -65,4 +65,18 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
+
+      # Clone git repository, update deployment files and push changes
+      - 
+        name: Update image tag in git repo 
+        run: | 
+          TEMP_FOLDER="$(mktemp -d)" 
+          echo Clone the repository...
+          git clone -b main "https://dmdeepfactor:${GIT_ACCESS_TOKEN}@github.com/github.com/deepfactor-field/deepfactor-demo-app.git" ${TEMP_FOLDER} 
+          cd ${TEMP_FOLDER}/k8s 
+          ls
+          echo update deployment files with new image tag
+          
+
+
       
