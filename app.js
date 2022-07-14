@@ -1,12 +1,8 @@
-const express = require('express')
-const app = express()
-
-app.get('/', (req, res) => {
-    res.send('Deepfactor Demo Application')
-
+const express = require("express")
+var app = express()
+app.get("/",function(request,response){
+response.send("Hello World!")
 })
-
-var port = process.env.PORT || '3000';
-app.listen(port, () => console.log(`Deepfactor Demo Application`))
-
-
+app.listen(3000, function () {
+console.log("Started application on port %d", 3000)
+});
