@@ -46,5 +46,5 @@ spec:
               topologyKey: "kubernetes.io/hostname"
       containers:
         - name: deepfactor-demo-app
-          image: "dmdeepfactor/deepfactor-demo-app:0.0.5"
+          image: "dmdeepfactor/deepfactor-demo-app:0.0.1-1001"
           imagePullPolicy: Always
