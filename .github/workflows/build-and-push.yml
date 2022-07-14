@@ -40,6 +40,8 @@ jobs:
             type=ref,event=pr
             type=semver,pattern={{version}}
             type=semver,pattern={{major}}.{{minor}}
+      
+      # Login to Docker registry
       -
         name: Login to DockerHub
         if: github.event_name != 'push_tag'
@@ -47,6 +49,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+      
+      # Install yq
+      - 
+        name: Install yq 
+        run: |
+          wget https://github.com/mikefarah/yq/releases/download/v4.12.0/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
+          yq --version
       -
         name: Build and push
         uses: docker/build-push-action@v3
