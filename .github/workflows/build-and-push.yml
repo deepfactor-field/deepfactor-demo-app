@@ -72,7 +72,7 @@ jobs:
         run: | 
           TEMP_FOLDER="$(mktemp -d)" 
           echo Clone the repository...
-          git clone -b main "https://dmdeepfactor:${GIT_ACCESS_TOKEN}@github.com/deepfactor-field/deepfactor-demo-app.git" ${TEMP_FOLDER} 
+          git clone -b main "https://dmdeepfactor:${GIT_ACCESS_TOKEN}@github.com/deepfactor-field/deepfactor-demo-node-app.git" ${TEMP_FOLDER} 
           cd ${TEMP_FOLDER}/k8s 
           ls
           echo update deployment files with new image tag
