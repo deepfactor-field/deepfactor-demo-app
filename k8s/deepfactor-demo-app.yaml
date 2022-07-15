@@ -30,7 +30,7 @@ spec:
       labels:
         app: deepfactor-demo-app
       annotations:
-        df.k8-app.name: "Deepfactor Demo Application"
+        #df.k8-app.name: "Deepfactor Demo Application"
         df.k8-app.alert/policy: "Interpreted Languages"
 
     spec:
