@@ -34,7 +34,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: |
-            dmdeepfactor/deepfactor-demo-app
+            dmdeepfactor/deepfactor-demo-node-app
           tags: |
             type=ref,event=branch
             type=ref,event=pr
